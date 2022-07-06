@@ -1,8 +1,9 @@
+import { createLocalStorage } from './services';
 import './style.css';
 
 const list = document.querySelector('.todo_list');
 
-const tasks = [
+export let tasks = [
   { description: 'Buy new phone', completed: false, index: 1 },
   { description: 'go to cafe', completed: false, index: 2 },
   { description: 'write a new book', completed: false, index: 3 },
@@ -23,4 +24,7 @@ function displayTodo() {
   });
 }
 
-displayTodo();
+document.addEventListener('DOMContentLoaded', () => {
+  createLocalStorage('tasks', []);
+  displayTodo();
+});
