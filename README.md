@@ -12,9 +12,9 @@
 - webpack
 - git and github
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://bahoz-ali.github.io/todo_list/)
 
 ## Getting Started
 
@@ -46,6 +46,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
+- thanks, It is inspired by the minimalist website
 - Hat tip to anyone whose code was used
 - Inspiration
 - etc
