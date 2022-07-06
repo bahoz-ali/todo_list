@@ -2,55 +2,37 @@
 
 # Project Name
 
-> Description the project.
-
+> "To-do list" is a tool that helps to organize your day. It simply lists the things that you need to do and allows you to mark them as complete. you can add new todo and remove and mark as complete.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- CSS
+- Javascript
+- webpack
+- git and github
 
 ## Live Demo (if available)
 
 [Live Demo Link](https://livedemo.com)
 
-
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
 
 To get a local copy up and running follow these simple example steps.
 
+- `git clone git@github.com:bahoz-ali/todo_list.git`
+
 ### Prerequisites
 
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+- Install node js
+- Have a code editor
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/bahoz-ali)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/bahoz-ali)
 
 ## 🤝 Contributing
 
