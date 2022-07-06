@@ -4,15 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Todo-list</title>
   <script defer src="main.js"></script></head>
   <body>
-    <h2>Welcome to my website</h2>
-    <ul class="todo_list">
-      <li class="item">
-        <input type="checkbox" name="" id="" />
-        <p>buy new phone</p>
-      </li>
-    </ul>
+    <section class="task_section">
+      <div class="task__header">
+        <p>Today's To Do</p>
+        <i class="fa-solid fa-arrows-rotate"></i>
+      </div>
+
+      <form action="" class="task__form">
+        <div class="input">
+          <input type="text" placeholder="Add to your list" />
+        </div>
+      </form>
+
+      <ul class="todo_list"></ul>
+
+      <div class="task__footer">
+        <button class="btn btn--clear" type="submit">
+          Clear all completed
+        </button>
+      </div>
+    </section>
   </body>
 </html>
