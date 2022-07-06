@@ -11,7 +11,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
 
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 
   module: {
     rules: [
