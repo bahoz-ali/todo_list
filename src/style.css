@@ -1,9 +1,131 @@
-.todo_list {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  font-family: poppins, Helvetica, Arial, Verdana, Tahoma, sans-serif;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
   padding: 0;
   list-style-type: none;
 }
 
-.todo_list .item {
+::placeholder {
+  font-style: italic;
+}
+
+.fa-turn-down {
+  cursor: pointer;
+  transform: rotateY(180deg);
+  color: #9e9e9e;
+  font-size: 0.8rem;
+}
+
+.task_section {
+  padding: 0.7rem 0 0;
+  width: 60%;
+  box-shadow: 0 0 11px 3px rgba(0, 0, 0, 0.42);
+  margin: 8rem auto 0;
+  text-align: center;
+}
+
+.btn.btn--hide {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.task__header {
   display: flex;
+  padding: 0.8rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: space-between;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.task__form {
+  padding: 0 1rem;
+  border-bottom: 1px solid #9e9e9e;
+}
+
+.fa-arrows-rotate {
+  cursor: pointer;
+  color: #9e9e9e;
+}
+
+.fa-ellipsis-vertical {
+  cursor: pointer;
+  color: #9e9e9e;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
+}
+
+.input input {
+  width: 90%;
+  padding: 0.6rem;
+  outline: none;
+  border: none;
+}
+
+.todo_list {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo_list .item {
+  border-bottom: 1px solid #9e9e9e;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 0.8rem;
+}
+
+.todo_list .group {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn--clear {
+  margin: 0.5rem 0;
+  color: #9e9e9e;
+}
+
+.task__footer {
+  background-color: #f6f6f6;
 }
