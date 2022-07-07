@@ -15,12 +15,34 @@ export function getData(key) {
 }
 
 export function addData(obj) {
-  console.log({obj})
+  console.log({ obj });
   const tasks = getData('tasks');
-  tasks.push(obj)
-  localStorage.setItem('tasks', JSON.stringify(tasks));
+  tasks.push(obj);
+  updateTasks(tasks);
 
   return tasks;
 }
 
-export function setData() {}
+export function deleteTask(id) {
+  let tasks = getData('tasks');
+
+  if (typeof id === 'string') id = Number(id);
+
+  tasks = tasks.filter((task) => task.index !== id);
+  updateTasks(tasks);
+  updateIndexes()
+}
+
+export function updateIndexes() {
+  let tasks = getData('tasks');
+
+  tasks = tasks.map((task, index) => {
+    return { ...task, index: index + 1 };
+  });
+
+  updateTasks(tasks);
+}
+
+export function updateTasks(data) {
+  localStorage.setItem('tasks', JSON.stringify(data));
+}
