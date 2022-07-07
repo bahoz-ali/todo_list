@@ -21,16 +21,29 @@
         <i class="fa-solid fa-arrows-rotate"></i>
       </div>
 
-      <form action="" class="task__form">
+      <form action="" id="task_form" class="task__form">
         <div class="input">
-          <input type="text" placeholder="Add to your list" />
+          <input type="text" placeholder="Add to your list" id="task_input" />
           <button class="btn btn--hide" type="submit">
-            <i class="fa-solid fa-turn-down"></i>
+            <i class="fa-solid fa-turn-down" id="add_task"></i>
           </button>
         </div>
       </form>
 
-      <ul class="todo_list"></ul>
+      <ul class="todo_list">
+        <li class="item">
+          <div id="task_item" class="group">
+            <input type="checkbox" ${ completed && 'checked' }/>
+            <input class="reset-input" type="text" disabled value="fix the real car" />
+          </div>
+          <i class="fa-solid fa-ellipsis-vertical" id="move_task"></i>
+          <i
+            class="fa-solid fa-trash icon_hide"
+            data-id="${index}"
+            id="delete_task"
+          ></i>
+        </li>
+      </ul>
 
       <div class="task__footer">
         <button class="btn btn--clear" type="submit">
