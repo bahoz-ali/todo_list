@@ -21,6 +21,13 @@
 To get a local copy up and running follow these simple example steps.
 
 - `git clone git@github.com:bahoz-ali/todo_list.git`
+- After you download the project then open the project with your editor.
+- Open terminal with same the project path.
+- use these command to install all packages `npm install` in the terminal.
+- You can use the webpack server run this command the terminal
+`npm run start`
+- you are good to go, see the project on your browser.
+
 
 ### Prerequisites
 
