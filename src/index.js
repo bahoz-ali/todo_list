@@ -4,7 +4,7 @@ import {
   getData,
   deleteTask,
   updateOneTask,
-} from './services.js';
+} from './services';
 import './style.css';
 
 const list = document.querySelector('.todo_list');
