@@ -152,3 +152,8 @@ ul {
   font-size: 1rem;
   pointer-events: none;
 }
+
+.completed {
+  text-decoration: line-through;
+  color: #ababab;
+}
