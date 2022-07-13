@@ -2,9 +2,9 @@ export function saveTOLocalStorage() {}
 
 export function getData(key) {
   try {
-    return JSON.parse(localStorage.getItem(key));
+    return JSON.parse(localStorage.getItem(key) || '[]')
   } catch (error) {
-    return localStorage.getItem(key);
+    return localStorage.getItem(key) || [];
   }
 }
 
