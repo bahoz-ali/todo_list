@@ -1,8 +1,8 @@
 export function saveTOLocalStorage() {}
 
-export function getData(key) {
+export function getData(key = 'tasks') {
   try {
-    return JSON.parse(localStorage.getItem(key) || '[]')
+    return JSON.parse(localStorage.getItem(key) || '[]');
   } catch (error) {
     return localStorage.getItem(key) || [];
   }

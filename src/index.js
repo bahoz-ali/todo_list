@@ -14,17 +14,17 @@ const taskInput = document.querySelector('#task_input');
 const taskForm = document.querySelector('#task_form');
 const clearCompletedBtn = document.querySelector('.btn--clear');
 
-export function createTaskElement(description, index, completed = false) {
+function createTaskElement(description, index, completed = false) {
   const li = document.createElement('li');
   li.classList.add('item');
 
   li.innerHTML = `<div id="task_item" class="group"> 
                     <input id="check_task" type="checkbox" ${
-                      completed ? 'checked' : ''
-                    } data-index="${index}"/>  
+  completed ? 'checked' : ''
+} data-index="${index}"/>  
                     <input class="reset-input ${
-                      completed ? 'completed' : ''
-                    }" data-index="${index}" type="text" disabled value="${description}" />
+  completed ? 'completed' : ''
+}" data-index="${index}" type="text" disabled value="${description}" />
                   </div> 
                  <i class="fa-solid fa-ellipsis-vertical" id="move_task"></i>
                  <i class="fa-solid fa-trash icon_hide" data-id="${index}" id="delete_task"></i>`;
