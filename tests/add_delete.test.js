@@ -64,24 +64,3 @@ describe('add and delete testing', () => {
 });
 
 
-describe('change description and complete tasks and clear all complete tasks', () => {
- 
-  it('should update the description of the task', () => {
-    clearLocalStorage();
-
-    const newTask = {
-      index: 0,
-      description: 'clean the win',
-      completed: false,
-    };
-
-    addData(newTask);
-
-    const newDescription = 'clean the window';
-    updateOneTask(newTask.index, newDescription);
-
-    expect(getData('tasks')[0].description).toBe(newDescription);
-  });
-
-  
-});
