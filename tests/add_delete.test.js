@@ -9,7 +9,10 @@ import {
   getData,
   updateOneTask,
 } from '../src/services.js';
-import { updateCompleteTask } from '../src/update_complete.js';
+import {
+  clearCompleteTasks,
+  updateCompleteTask,
+} from '../src/update_complete.js';
 
 const tasks = [
   {
@@ -86,10 +89,32 @@ describe('change description and complete tasks and clear all complete tasks', (
 
   it('should convert the completed task to un completed task(false) if user update it', () => {
     clearLocalStorage();
+
     tasks[0].completed = true;
     addData(tasks[0]);
     updateCompleteTask(tasks[0].index, false);
 
     expect(getData('tasks')[0].completed).toBeFalsy();
+  });
+
+  it('should clear all the completed tasks', () => {
+    clearLocalStorage();
+
+    tasks[0].completed = true;
+    tasks[1].completed = false;
+    tasks[2].completed = false;
+    tasks[3].completed = true;
+
+    addData(tasks[0]);
+    addData(tasks[1]);
+    addData(tasks[2]);
+    addData(tasks[3]);
+
+    clearCompleteTasks();
+    expect(getData('tasks')).toHaveLength(2);
+
+    updateCompleteTask(tasks[1].index, true);
+    clearCompleteTasks();
+    expect(getData('tasks')).toHaveLength(1);
   });
 });
