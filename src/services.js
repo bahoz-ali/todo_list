@@ -14,6 +14,7 @@ export function createLocalStorage(key = 'tasks', value = []) {
   }
 }
 
+/* eslint-disable import/prefer-default-export */
 export function updateTasks(data) {
   localStorage.setItem('tasks', JSON.stringify(data));
 }
@@ -42,6 +43,10 @@ export function deleteTask(id) {
   tasks = tasks.filter((task) => task.index !== id);
   updateTasks(tasks);
   updateIndexes();
+}
+
+export function clearLocalStorage() {
+  updateTasks([]);
 }
 
 export function updateOneTask(id, description) {

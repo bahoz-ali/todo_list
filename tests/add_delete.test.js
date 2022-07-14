@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { addData, deleteTask, getData } from '../src/services.js';
+import { addData, clearLocalStorage, deleteTask, getData, updateOneTask } from '../src/services.js';
 
 describe('add and delete testing', () => {
   it('should add new data into the local storage.', () => {
@@ -61,4 +61,27 @@ describe('add and delete testing', () => {
 
     expect(getData('tasks')).toHaveLength(5);
   });
+});
+
+
+describe('change description and complete tasks and clear all complete tasks', () => {
+ 
+  it('should update the description of the task', () => {
+    clearLocalStorage();
+
+    const newTask = {
+      index: 0,
+      description: 'clean the win',
+      completed: false,
+    };
+
+    addData(newTask);
+
+    const newDescription = 'clean the window';
+    updateOneTask(newTask.index, newDescription);
+
+    expect(getData('tasks')[0].description).toBe(newDescription);
+  });
+
+  
 });
