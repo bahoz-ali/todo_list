@@ -83,4 +83,13 @@ describe('change description and complete tasks and clear all complete tasks', (
 
     expect(getData('tasks')[0].completed).toBeTruthy();
   });
+
+  it('should convert the completed task to un completed task(false) if user update it', () => {
+    clearLocalStorage();
+    tasks[0].completed = true;
+    addData(tasks[0]);
+    updateCompleteTask(tasks[0].index, false);
+
+    expect(getData('tasks')[0].completed).toBeFalsy();
+  });
 });
