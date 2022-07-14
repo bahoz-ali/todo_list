@@ -2,86 +2,85 @@
  * @jest-environment jsdom
  */
 
-import { addData, clearLocalStorage, deleteTask, getData, updateOneTask } from '../src/services.js';
+import {
+  addData,
+  clearLocalStorage,
+  deleteTask,
+  getData,
+  updateOneTask,
+} from '../src/services.js';
+import { updateCompleteTask } from '../src/update_complete.js';
+
+const tasks = [
+  {
+    description: 'Head back home',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'clean',
+    completed: false,
+    index: 2,
+  },
+  {
+    description: 'buy new car',
+    completed: false,
+    index: 3,
+  },
+  {
+    description: 'sell the pen!',
+    completed: false,
+    index: 4,
+  },
+];
 
 describe('add and delete testing', () => {
   it('should add new data into the local storage.', () => {
-    const task1 = {
-      description: 'Head back home',
-      completed: false,
-      index: 1,
-    };
+    clearLocalStorage();
 
-    const task2 = {
-      description: 'clean',
-      completed: false,
-      index: 2,
-    };
-
-    const task3 = {
-      description: 'buy new car',
-      completed: false,
-      index: 3,
-    };
-
-    const task4 = {
-      description: 'sell the pen!',
-      completed: false,
-      index: 4,
-    };
-
-    addData(task1);
+    addData(tasks[0]);
     expect(getData('tasks')).toHaveLength(1);
     expect(getData('tasks')[0].completed).toBe(false);
-    addData(task2);
+
+    addData(tasks[1]);
     expect(getData('tasks')).toHaveLength(2);
     expect(getData('tasks')[1].description).toBe('clean');
-    addData(task3);
-    addData(task4);
+
+    addData(tasks[2]);
+    addData(tasks[3]);
     expect(getData('tasks')[3].description).toBe('sell the pen!');
   });
 
   it('should remove data from the local storage.', () => {
-    const task1 = {
-      description: 'Head back home',
-      completed: false,
-      index: 5,
-    };
+    clearLocalStorage();
 
-    const task2 = {
-      description: 'clean',
-      completed: false,
-      index: 6,
-    };
+    addData(tasks[0]);
+    addData(tasks[1]);
 
-    addData(task1);
-    addData(task2);
+    deleteTask(tasks[0].index);
 
-    deleteTask(task1.index);
-
-    expect(getData('tasks')).toHaveLength(5);
+    expect(getData('tasks')).toHaveLength(1);
   });
 });
 
-
 describe('change description and complete tasks and clear all complete tasks', () => {
- 
   it('should update the description of the task', () => {
     clearLocalStorage();
 
-    const newTask = {
-      index: 0,
-      description: 'clean the win',
-      completed: false,
-    };
-
-    addData(newTask);
+    addData(tasks[3]);
 
     const newDescription = 'clean the window';
-    updateOneTask(newTask.index, newDescription);
+    updateOneTask(tasks[3].index, newDescription);
 
     expect(getData('tasks')[0].description).toBe(newDescription);
   });
 
-  
+  it('should convert the un completed task to complete task(true) if user update it', () => {
+    clearLocalStorage();
+
+    addData(tasks[0]);
+    updateCompleteTask(tasks[0].index, true);
+
+    expect(getData('tasks')[0].completed).toBeTruthy();
+  });
 });
